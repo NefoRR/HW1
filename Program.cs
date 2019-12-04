@@ -6,49 +6,17 @@ namespace Ex1
     {
         public static void Main(String[] args)
         {
-            Circle circle = new Circle();
-            Square square = new Square();
-            Console.WriteLine("Area of a circle: " + circle.Area());
-            Console.WriteLine("Area of a square: " + square.Area());
+            Console.Write("Enter radius: ");
+            Circle circle = new Circle(TakeDataFromKeyboardAndCheck());
+            Console.Write("Enter square side: ");
+            Square square = new Square(TakeDataFromKeyboardAndCheck());
+            Console.WriteLine("Area of a circle: " + String.Format("{0:f}", circle.Area()));
+            Console.WriteLine("Area of a square: " + String.Format("{0:f}", square.Area()));
             Console.ReadKey();
         }
 
-        public class Circle
-        {
-            private Double radius;
-            private const double pi = 3.141592653589793238462643;
 
-            public Circle()
-            {
-                Console.Write("Enter radius: ");
-                this.radius = TakeDataFromKeyboardAndCheck();
-            }
-
-            public String Area()
-            {
-                Double area = radius * radius * pi;
-                String result = String.Format("{0:f}", area);
-                return result;
-            }
-        };
-
-        public class Square
-        {
-            private Double side;
-
-            public Square()
-            {
-                Console.Write("Enter square side: ");
-                this.side = TakeDataFromKeyboardAndCheck();
-            }
-
-            public String Area()
-            {
-                Double area = side * side;
-                String result = String.Format("{0:f}", area);
-                return result;
-            }
-        }
+        
 
         public static Double TakeDataFromKeyboardAndCheck()
         {
