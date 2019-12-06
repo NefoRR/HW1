@@ -11,6 +11,11 @@ public class Square
         this.side = side;
     }
 
+    public Double getSide()
+    {
+        return side;
+    }
+
     public Double Area()
     {
         Double area = side * side;

@@ -13,6 +13,10 @@ public class Circle
         this.radius = radius;
     }
 
+    public Double getRadius() {
+        return radius;
+    }
+
     public Double Area()
     {
         Double area = radius * radius * pi;
