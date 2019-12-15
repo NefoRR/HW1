@@ -4,24 +4,22 @@ using System.Text;
 
 public class Circle
 {
-    private Double radius;
+    private double _radius;
     private const double pi = 3.141592653589793238462643;
+    private double _area;
+    
+    public double Area => _area;
 
-    public Circle(Double radius)
+    public double Radius
     {
-
-        this.radius = radius;
+        get => _radius;
+        set
+        {
+            _radius = value;
+            _area = _radius * _radius * pi;
+        }
     }
 
-    public Double getRadius() {
-        return radius;
-    }
 
-    public Double Area()
-    {
-        Double area = radius * radius * pi;
-
-        return area;
-    }
 };
 

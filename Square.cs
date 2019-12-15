@@ -4,22 +4,18 @@ using System.Text;
 
 public class Square
 {
-    private Double side;
+    private double _side;
+    private double _area;
 
-    public Square(Double side)
+    public double Side
     {
-        this.side = side;
+        get => _side;
+        set
+        {
+            _side = value;
+            _area = _side * _side;
+        }
     }
-
-    public Double getSide()
-    {
-        return side;
-    }
-
-    public Double Area()
-    {
-        Double area = side * side;
-
-        return area;
-    }
+    
+    public double Area => _area;
 }
